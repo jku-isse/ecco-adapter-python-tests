@@ -1,0 +1,47 @@
+{
+  "general": {
+    "DEBUG_MODE": false,
+    "LOAD_MODEL": "NONE",
+    "DEVICE": "cpu",
+    "EXPERIMENT_NUMBER": "001",
+    "WARMUP": true
+  },
+  "algorithm_settings": {
+    "BATCH_SIZE": 128,
+    "NUM_EPISODES": 100000,
+    "PERIOD_LENGTH": [0, 50000, 75000, 100000],
+    "EXPERIENCE_REPLAY_SIZE": 1000000,
+    "MIN_EXPERIENCE_REPLAY_SIZE": 100000,
+    "GAMMA": 0.99,
+    "LR": 5e-4,
+    "EPS_DEC_METHOD": "linear",
+    "EPS": 1.0,
+    "EPS_START": 1.0,
+    "EPS_END": 0.1,
+    "EPS_DECAY": 0.0001,
+    "NETWORK": "net_architecture.DQN",
+    "TARGET_UPDATE": 300,
+    "WARMUP_SETTINGS": {
+      "NUM_EPISODES": 20000,
+      "EXPERIENCE_REPLAY_SIZE": 200000,
+      "MIN_EXPERIENCE_REPLAY_SIZE": 20000,
+      "EPS_DECAY": 0.0001
+    }
+  },
+  "store_model": {
+    "SAVE_MODEL": 100,
+    "MODEL_PATH": "//remotestorageurl/pommerman/dqn2",
+    "MODEL_NAME": "model.pt",
+    "BEST_MODEL_NAME": "best_model.pt"
+  },
+  "render_options": {
+    "RENDER_ALL": false
+  },
+  "stats": {
+    "PRINT_STATS": 100,
+    "RESULTS_PATH": "//remotestorageurl/pommerman/dqn2/results",
+    "UPDATE_TENSORBOARD": 100,
+    "FIGURE_STATS": "stats.png",
+    "PICKLE_RESULT": "results.pkl"
+  }
+}

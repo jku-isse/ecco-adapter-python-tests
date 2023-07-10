@@ -1,0 +1,49 @@
+{
+  "general": {
+    "DEBUG_MODE": false,
+    "LOAD_MODEL": "LATEST",
+    "DEVICE": "cpu",
+    "EXPERIMENT_NUMBER": "002",
+    "ENV_NAME": "pomme",
+    "WARMUP": false
+  },
+  "algorithm_settings": {
+    "ALGO": "ppo",
+    "NETWORK": "net_architecture.CNNActorCritic",
+    "NUM_STEPS": 8192,
+    "NUM_EPISODES": 100000,
+    "LR": 4e-4,
+    "USE_LINEAR_LR_DECAY": false,
+    "ENTROPY_COEF": 0.0,
+    "VALUE_LOSS_COEF": 0.5,
+    "EPS": 1e-8,
+    "GAMMA": 0.99,
+    "USE_GAE": true,
+    "GAE_LAMBDA": 0.95,
+    "CLIP_PARAM": 0.2,
+    "PPO_EPOCH": 4,
+    "NUM_MINI_BATCH": 128,
+    "MAX_GRAD_NORM": 0.5,
+    "PERIOD_LENGTH": [0, 50000, 75000, 100000],
+    "USE_PROPER_TIME_LIMITS": true,
+    "WARMUP_SETTINGS": {
+      "NUM_EPISODES": 20000
+    }
+  },
+  "store_model": {
+    "SAVE_MODEL": 100,
+    "MODEL_PATH": "//remotestorageurl/pommerman/ppo2",
+    "MODEL_NAME": "model.pt",
+    "BEST_MODEL_NAME": "best_model.pt"
+  },
+  "render_options": {
+    "RENDER_ALL": true
+  },
+  "stats": {
+    "PRINT_STATS": 100,
+    "RESULTS_PATH": "//remotestorageurl/pommerman/ppo2/results",
+    "UPDATE_TENSORBOARD": 100,
+    "FIGURE_STATS": "stats.png",
+    "PICKLE_RESULT": "results.pkl"
+  }
+}
